@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Contato</ion-card-title>
+    <ion-card-subtitle>Entre em contato através do Whatspp utilizando o formulário abaixo</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="contactForm" (ngSubmit)="openWhatsapp()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input type="text" label="Nome*" fill="outline" labelPlacement="floating" placeholder="Nome" formControlName="name"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-textarea class="ion-margin-vertical" label="Mensagem*" rows="5" labelPlacement="floating" placeholder="Escreva sua mensagem" fill="outline" formControlName="message"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-button color="tertiary" type="submit" expand="block" [disabled]="!contactForm.valid">Enviar</ion-button>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+    </form>
+  </ion-card-content>
+</ion-card>
